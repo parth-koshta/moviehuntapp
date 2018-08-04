@@ -47,7 +47,7 @@ let getAllData = () => {
 		type: 'GET',
 		dataType: 'json',
 		async: true,
-		url : `http://www.omdbapi.com/?s=${movieName}&y=${movieYear}&i=${movieId}&apikey=5b101d64`,
+		url : `https://www.omdbapi.com/?s=${movieName}&y=${movieYear}&i=${movieId}&apikey=5b101d64`,
 
 		success: (data) => {
 			$('.movie-cards-wrapper').html('');
