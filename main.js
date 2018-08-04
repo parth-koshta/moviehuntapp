@@ -3,6 +3,7 @@
 // apikey=5b101d64
 
 $(document).ready(() => {
+	//enter key tiggers the submit button
 	$('input').keypress(function (e) {
 	 var key = e.which;
 	 if(key == 13)  // the enter key code
@@ -12,7 +13,7 @@ $(document).ready(() => {
 	  }
 	});   
 
-
+	//submit button calls the getAllData function
 	$('#submit-button-id').click(() => {
 
 		getAllData();
@@ -21,7 +22,7 @@ $(document).ready(() => {
 	})
 })
 
-
+// getAllData() starts
 let getAllData = () => {
 	
 
@@ -36,7 +37,7 @@ let getAllData = () => {
 	console.log(movieName)
 	console.log(movieYear)
 	console.log(`https://www.omdbapi.com/?s=${movieName}&y=${movieYear}&i=${movieId}&apikey=5b101d64`);
-
+// Ajax Request Starts
 	$.ajax({
 		type: 'GET',
 		dataType: 'json',
@@ -55,7 +56,7 @@ let getAllData = () => {
 			console.log("requesting")
 			console.log(data)
 
-
+			// If movie id and movie title and year all are empty
 			if((movieId === '' || movieId === null) && (movieName === '' || movieName === null) && (movieYear === '' || movieYear === null)){
 				let yearWarning = `<div class="alert alert-danger" role="alert">
 							  No details entered.
@@ -71,6 +72,7 @@ let getAllData = () => {
 			$('.movie-cards-wrapper').append(Warning)
 			 
 			} else {
+				// If movie id is entered
 				if((movieId !== '' || movieId !== null) && (movieName === '' || movieName === null)) {
 				if(data.Response === 'False') {
 					// alert(data.Error)
@@ -80,6 +82,7 @@ let getAllData = () => {
 			$('.movie-cards-wrapper').append(Warning)
 
 				} else {
+					// If movie poster not available
 					if(data.Poster === "N/A"){
 					let tempCard = `<div class="card movie-info-card" style="width: 18rem;">
 			                      <img class="card-img-top movie-card-img" src='images/dummy2.png' alt="Card image cap">
@@ -95,6 +98,7 @@ let getAllData = () => {
 			    $('.movie-cards-wrapper').append(tempCard)
 				
 			} else {
+				// If movie poster is available
 				let tempCard = `<div class="card movie-info-card" style="width: 18rem;">
 			                      <img class="card-img-top movie-card-img" src='${data.Poster}' alt="Card image cap">
 			                      <div class="card-body">
@@ -112,6 +116,7 @@ let getAllData = () => {
 
 				
 			} else {
+				// When movie title is entered
 				let searchData = data.Search;
 
 				if(data.Response === 'False') {
@@ -121,6 +126,7 @@ let getAllData = () => {
 					$('.movie-cards-wrapper').append(Warning)
 				} else {
 					for(movie of searchData) {
+						// If movie poster not available
 						if(movie.Poster === "N/A"){
 					let tempCard = `<div class="card movie-info-card" style="width: 18rem;">
 			                      <img class="card-img-top movie-card-img" src='images/dummy2.png' alt="Card image cap">
@@ -135,6 +141,7 @@ let getAllData = () => {
 			    $('.movie-cards-wrapper').append(tempCard)
 				
 			} else {
+				// If movie poster is available
 				let tempCard = `<div class="card movie-info-card" style="width: 18rem;">
 			                      <img class="card-img-top movie-card-img" src='${movie.Poster}' alt="Card image cap">
 			                      <div class="card-body">
@@ -149,33 +156,22 @@ let getAllData = () => {
 			}
 					}
 				}
-
-		} //2nd main else end search through name
-			} // through id
-			}//1st main else ended no details
-
-
-
-			 
-
+		}
+			} 
+			}
 			},//success ends
 			beforeSend: () => {
 				let Warning = `<div class="alert alert-primary" role="alert">
 							  Searching for results...
 								</div>`
 					$('.movie-cards-wrapper').append(Warning)
-			},//before send ends
+			},//beforeSend ends
 			complete: () => {
 				$('.footer-section').css('position', 'relative');
 			},//complete ends
 			error: (err) => {
-
             console.log(err.responseJSON.error.message);
             alert(err.responseJSON.error.message)
-
-        }//error ends
-
-
-			
+        }//error ends		
 	})//Ajax request ends
 }//getAllData ends
