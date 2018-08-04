@@ -41,7 +41,7 @@ let getAllData = () => {
 	console.log(movieId)
 	console.log(movieName)
 	console.log(movieYear)
-	console.log(`http://www.omdbapi.com/?s=${movieName}&y=${movieYear}&i=${movieId}&apikey=5b101d64`);
+	console.log(`https://www.omdbapi.com/?s=${movieName}&y=${movieYear}&i=${movieId}&apikey=5b101d64`);
 
 	$.ajax({
 		type: 'GET',
