@@ -4,17 +4,11 @@ body {
 }
 
 .navbar-component {
-	/*background: #c0392b;*/
-	/*background: linear-gradient(to right bottom, rgb(126, 213, 111, 0.8), rgb(40, 180, 133, 0.8));*/
-	background: linear-gradient(to right bottom, rgb(29, 67, 80, 0.8), rgb(164, 57, 49, 0.8));
-	/*background: #333333;*/
-	/*border: 1px solid;*/
+	background: linear-gradient(to right, rgb(142, 14, 0, 0.8), rgb(31, 28, 24, 0.8));
 	box-shadow: 0 1px 2px rgba(0,0,0,.5);
-	
 }
 
 .navbar-brand {
-	/*font-weight: 700;*/
 	font-size: 2rem !important;
 }
 
@@ -23,17 +17,8 @@ body {
 	padding: .4rem;
 	color: #fff;
 	font-size: 1rem;
-	/*background: #c0392b;*/
-	/*background: linear-gradient(to right bottom, rgb(126, 213, 111, 0.8), rgb(40, 180, 133, 0.8));*/
-	/*background: linear-gradient(to right bottom, rgb(19, 78, 94, 0.8), rgb(113, 178, 128, 0.8));*/
-	/*background: linear-gradient(to right bottom, rgb(255, 95, 109, 0.8), rgb(255, 195, 113, 0.8));*/
-	background: linear-gradient(to right bottom, rgb(29, 67, 80, 0.8), rgb(164, 57, 49, 0.8));
-	/*background: #1ABC9C;*/
+	background: linear-gradient(to right bottom, rgb(142, 14, 0, 0.8), rgb(31, 28, 24, 0.8));
 	cursor: pointer;
-}
-
-.about-app:hover {
-	/*color: #000;*/
 }
 
 .about-app:focus {
@@ -46,7 +31,6 @@ body {
 }
 
 .header-fonts {
-	/*font-family: 'Lato', sans-serif;*/
 	font-family: 'Nunito', sans-serif;
 }
 
@@ -56,61 +40,37 @@ body {
 
 .search-container {
 	padding: 6rem 0 2rem 0;
-	/*height: 100%;*/
-	/*background: rgba(236, 240, 241,1.0);*/
-	/*background: #7F8C8D;*/
 	background: #ECF0F1;
-	/*border: 1px solid;*/
 	height: auto;
 }
 
 .search-head {
-	/*border: 1px solid;*/
 	margin: 0 20% 0 20%;
-	/*background: #c0392b;*/
-	/*background: linear-gradient(to right bottom, rgb(126, 213, 111, 0.8), rgb(40, 180, 133, 0.8));*/
-	/*background: linear-gradient(to right bottom, rgb(19, 78, 94, 0.8), rgb(113, 178, 128, 0.8));*/
-	background: linear-gradient(to right bottom, rgb(29, 67, 80, 0.8), rgb(164, 57, 49, 0.8));
-	/*background: linear-gradient(to right bottom, rgb(75, 121, 161, 0.8), rgb(40, 62, 81, 0.8));*/
-		/*background: #333333;*/
+	background: linear-gradient(to right, rgb(142, 14, 0, 0.8), rgb(31, 28, 24, 0.8));
 	box-shadow: 1px 1px 2px rgba(0,0,0,.5);
 }
 
 .search-head-text {
-	/*border: 1px solid;*/
 	color: #fff;
-	/*padding-top: .5rem;*/
-	/*height: auto;*/
 }
-.search-heading {
-	/*border: 1px solid green;*/
-	/*height: 3rem;*/
-}
+
 .search-content {
-	/*border: 1px solid;*/
 	margin: 0 20% 0 20%;
-	/*background: rgba(192, 57, 43);*/
-	/*background: linear-gradient(to right bottom, rgb(126, 213, 111, 0.8), rgb(40, 180, 133, 0.8));*/
-	/*background: linear-gradient(to right bottom, rgb(19, 78, 94), rgb(113, 178, 128));*/
-	/*background: linear-gradient(to right bottom, rgb(255, 95, 109, 0.8), rgb(255, 195, 113, 0.8));*/
-	background: linear-gradient(to right bottom, rgb(29, 67, 80, 0.8), rgb(164, 57, 49, 0.8));
+	background: linear-gradient(to right, rgb(142, 14, 0, 0.8), rgb(31, 28, 24, 0.8));
 	box-shadow: 1px 1px 5px rgba(0,0,0,.5);
 	color: #fff;
 }
 
 .search-menu-head {
 	font-size: 2rem;
-	/*border: 1px solid;*/
 	padding-top: .4rem;
 }
 
 .search-box-margin {
 		margin: 0 10% 0 10%;
-		/*border: 1px solid red;*/
 		padding: 1rem 2rem 1rem 2rem;
 }
 .search-content {
-	/*border: 1px solid;*/
 	margin-top: 1rem;
 }
 
@@ -122,8 +82,6 @@ body {
 	margin: 0 20% 0 20%;
 	padding: 1rem;
 	margin-top: .5rem;
-	/*margin-bottom: 2rem;*/
-	/*height: auto;*/
 }
 
 .submit-button {
@@ -132,97 +90,40 @@ body {
 	border:1px solid;
 	cursor: pointer;
 	padding: .5rem;
-	/*color: #c0392b;*/
-	color: #134e5e;
-	/*color: linear-gradient(to right bottom, rgb(126, 213, 111, 0.8), rgb(40, 180, 133, 0.8));*/
+	color: #660a00;
 	font-family: 'Nunito', sans-serif;
 	font-size: 1.2rem;
 }
 
-.submit-button:hover {
-	/*color: #000;*/
-}
-
 .submit-button:focus {
 	outline: none;
-	
 }
 .submit-button:active {
-	/*border: 1px solid #c0392b;*/
-	/*-webkit-box-shadow: 0px 0px 10px -1px rgba(192,57,43,0.82);
-	-moz-box-shadow: 0px 0px 10px -1px rgba(192,57,43,0.82);
-	box-shadow: 0px 0px 10px -1px rgba(192,57,43,0.82);*/
-
 	box-shadow: 0 0 5px rgba(192,57,43,.9);
 }
-
 .movie-cards-head {
-	margin-bottom: .55rem;
+	margin-bottom: 2rem;
 }
-
 .movie-info-card {
 	font-family: 'Nunito', sans-serif;
 	margin: .5rem;
 }
-
 .movie-card-img {
 	height: 20rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*.footer-css {
-	
-	background: #c0392b;
-	color: #fff;
-	
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-}*/
-
 .footer-section {
-	/*margin-top: 2rem;*/
-	/*border: 1px solid;*/
 	height: 3rem;
-	/*background: #c0392b;*/
-	/*background: linear-gradient(to right bottom, rgb(126, 213, 111, 0.8), rgb(40, 180, 133, 0.8));*/
-	/*background: linear-gradient(to right bottom, rgb(19, 78, 94, 0.8), rgb(113, 178, 128, 0.8));*/
-	background: linear-gradient(to right bottom, rgb(29, 67, 80, 0.8), rgb(164, 57, 49, 0.8));
-
-	/*position: fixed;*/
-	/*position: absolute;*/
-	/*position: relative;*/
+	background: linear-gradient(to right, rgb(142, 14, 0, 0.8), rgb(31, 28, 24, 0.8));
 	bottom: 0;
 	left: 0;
-	position: relative;
+	position: fixed;
 	width: 100%;
 	box-shadow: 0 -1px 2px rgba(0,0,0,.5);
 }
 .footer-head {
-	/*border: 1px solid;*/
 	height: 100%;
 }
 .footer-body {
-	/*border: 1px solid;*/
 	padding-top: .8rem;
 	color: #fff;
 	font-family: 'Nunito', sans-serif;
@@ -235,39 +136,32 @@ body {
 	.search-head {
 		margin: 0 5% 0 5%;
 	}
-	
 	.search-content {
 		margin: 1rem 5% 0 5%;
 	}
 	.search-container {
 		padding: 2rem 0 2rem 0;
 	}
+	.about-app {
+		font-size: .8rem;
+	}
 }
 
 @media only screen and (max-width: 350px) {
 
 	.navbar-brand {
-	/*font-weight: 700;*/
 	font-size: 1.5rem !important;
 	}
-
-	.about-app {
-		font-size: .8rem;
-	}
-
 	.search-head {
 		margin: 0;
 	}
-	
 	.search-content {
 		margin: 0;
 		margin-top: 1rem;
 	}
-
 	.search-menu-head {
 		font-size: 1.5rem;
 	}
-
 	.search-content-fonts {
 	font-size: 1rem;
 }

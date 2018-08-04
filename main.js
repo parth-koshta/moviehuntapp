@@ -2,7 +2,6 @@
 // tt1285016 with poster
 // apikey=5b101d64
 
-
 $(document).ready(() => {
 	$('input').keypress(function (e) {
 	 var key = e.which;
@@ -15,8 +14,6 @@ $(document).ready(() => {
 
 
 	$('#submit-button-id').click(() => {
-		// location.reload();
-		// $('.movie-cards-head').html('');
 
 		getAllData();
 
@@ -26,15 +23,12 @@ $(document).ready(() => {
 
 
 let getAllData = () => {
-	// $('#submit-button-id').click(() => {
-	// 	location.reload();
-	// }
-
+	
 
 	let movieId = $('#movie-id-id').val();
 	let movieName = $('#movie-title-id').val();
 	let movieYear = $('#movie-year-id').val();
-	// $('.movie-cards-head').html('');
+
 
 	console.log("requesting");
 
@@ -60,12 +54,31 @@ let getAllData = () => {
 
 			console.log("requesting")
 			console.log(data)
-			// $('.movie-cards-head').html('');
 
 
-			if((movieId !== '' || movieId !== null) && (movieName === '' || movieName === null)) {
+			if((movieId === '' || movieId === null) && (movieName === '' || movieName === null) && (movieYear === '' || movieYear === null)){
+				let yearWarning = `<div class="alert alert-danger" role="alert">
+							  No details entered.
+						</div>`
+			$('.movie-cards-wrapper').append(yearWarning)
+			} else {
+				if((movieId === '' || movieId === null) && (movieName === '' || movieName === null) && (movieYear !== '' || movieYear !== null)){
+				
+			 let Warning = `<div class="alert alert-danger" role="alert">
+							  Unable to search movies through year alone.<br>
+							  Please provide more details.
+						</div>`
+			$('.movie-cards-wrapper').append(Warning)
+			 
+			} else {
+				if((movieId !== '' || movieId !== null) && (movieName === '' || movieName === null)) {
 				if(data.Response === 'False') {
-					alert("something is wrong")
+					// alert(data.Error)
+					let Warning = `<div class="alert alert-danger" role="alert">
+							  ${data.Error}
+						</div>`
+			$('.movie-cards-wrapper').append(Warning)
+
 				} else {
 					if(data.Poster === "N/A"){
 					let tempCard = `<div class="card movie-info-card" style="width: 18rem;">
@@ -102,7 +115,10 @@ let getAllData = () => {
 				let searchData = data.Search;
 
 				if(data.Response === 'False') {
-					alert("something is wrong")
+					let Warning = `<div class="alert alert-danger" role="alert">
+							  ${data.Error}
+								</div>`
+					$('.movie-cards-wrapper').append(Warning)
 				} else {
 					for(movie of searchData) {
 						if(movie.Poster === "N/A"){
@@ -134,7 +150,32 @@ let getAllData = () => {
 					}
 				}
 
-		}
-			}
-	})
-}
+		} //2nd main else end search through name
+			} // through id
+			}//1st main else ended no details
+
+
+
+			 
+
+			},//success ends
+			beforeSend: () => {
+				let Warning = `<div class="alert alert-primary" role="alert">
+							  Searching for results...
+								</div>`
+					$('.movie-cards-wrapper').append(Warning)
+			},//before send ends
+			complete: () => {
+				$('.footer-section').css('position', 'relative');
+			},//complete ends
+			error: (err) => {
+
+            console.log(err.responseJSON.error.message);
+            alert(err.responseJSON.error.message)
+
+        }//error ends
+
+
+			
+	})//Ajax request ends
+}//getAllData ends
